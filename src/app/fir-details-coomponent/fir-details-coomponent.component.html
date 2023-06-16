@@ -1,0 +1,141 @@
+<div>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title style="align-items: center;">
+                FIR Details
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+            <div class="form">
+                <table>
+                    <thead></thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <mat-form-field>
+                                    <input matInput [(ngModel)]="firPopUp.state" placeholder="State" readonly>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field>
+                                    <input matInput [(ngModel)]="firPopUp.district" placeholder="District" readonly>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field>
+                                    <input matInput [(ngModel)]="firPopUp.policeStation" placeholder="Police Station"
+                                        readonly>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field>
+                                    <input matInput [(ngModel)]="data.fir" placeholder="FIR number" readonly>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field>
+                                    <input matInput [(ngModel)]="firPopUp.firStatus" placeholder="FIR Status" readonly>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field>
+                                    <input matInput [(ngModel)]="firPopUp.officerInchargeFullName"
+                                        placeholder="Assigned IO" readonly>
+                                </mat-form-field>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style=" width:50px" colspan="2">
+                                <mat-form-field style="width: 700px; ">
+                                    <textarea matInput cols="200" rows="4" placeholder="FIR Discription"
+                                        [(ngModel)]="firPopUp.firDescription" readonly></textarea>
+                                </mat-form-field>
+                            </td>
+
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field>
+                                    <input matInput [(ngModel)]="firPopUp.majorHead" placeholder="FIR Major Head"
+                                        readonly>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field>
+                                    <input matInput [(ngModel)]="firPopUp.minorHead" placeholder="FIR Minor Head"
+                                        readonly>
+                                </mat-form-field>
+                            </td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="row">
+                <tr>
+                    <td>
+                        <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
+                            <label class="example-margin">IIF-II</label>
+                            <input  type="range" [(ngModel)]="iif2">
+                        </section>
+
+                    </td>
+                    <td>
+                        <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
+                            <label class="example-margin">IIF-III</label>
+                            <input type="range" [(ngModel)]="iif3">
+                        </section>
+                    </td>
+                    <td>
+                        <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
+                            <label class="example-margin">IIF-IV</label>
+                            <input type="range" [(ngModel)]="iif4">
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
+                            <label class="example-margin">IIF-V</label>
+                            <input type="range" [(ngModel)]="iif5">
+                        </section>
+                    </td>
+                    <td>
+                        <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
+                            <label class="example-margin">IIF-VI</label>
+                            <input type="range" [(ngModel)]="iif6">
+                        </section>
+                    </td>
+                    <td>
+                        <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
+                            <label class="example-margin">IIF-VII</label>
+                            <input type="range" [(ngModel)]="iif7">
+                        </section>
+                    </td>
+                </tr>
+
+
+            </div>
+
+
+        </mat-card-content>
+    </mat-card>
+</div>
+<div mat-dialog-action>
+    <button mat-raised-button color="primary" mat-dialog-close>Cancel</button>
+    <!-- <button mat-button [mat-button-close]="'CLOSE'">Confirm</button> -->
+</div>

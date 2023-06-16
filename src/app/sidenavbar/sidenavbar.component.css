@@ -1,0 +1,55 @@
+:host{
+    display: flex;
+    flex-direction:column;
+    height: 100%;
+}
+
+mat-drawer-container{
+    height: 100%;
+}
+mat-drawer{
+    width: 200px;
+}
+
+mat-sidenav, mat-sidenav-content{
+    padding: 20%;
+}
+
+mat-sidenav{
+    background-color: rgb(240, 152, 45);
+    width: 200px;
+}
+
+mat-sidenav-content{
+    background-color:rgb(245, 241, 241);
+} 
+
+mat-toolbar{
+    background-color: rgb(251, 251, 253);
+    font-size:medium;
+}
+mat-drawer, mat-list{
+    background-color: rgb(245, 245, 248);
+}
+
+.logo{
+    width: 100px;
+    height: 60px;
+    margin: 5px;
+}
+
+mat-toolbar {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.5rem;
+    width: 100%;
+    background-color: lightgrey;
+  }
+
+  mat-drawer-content{
+    padding: 10px;
+    background-color:rgb(255, 255, 255);
+  }
+
+

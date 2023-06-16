@@ -1,0 +1,16 @@
+export interface FirEntityPopUp {
+    firRegNum : number,
+    state : string,
+    district : string,
+    policeStation: string,
+    ioFullName: string,
+    firStatus:string,
+    firDescription:string,
+	majorHead:string,
+	minorHead:string,
+	officerInchargeFullName:string,
+	firType:string,
+	regDate:string,
+	actionTaken:string,
+	act:string,
+}

@@ -1,0 +1,63 @@
+input, select{
+    background-color: #fff !important;
+}
+
+.firDetails{
+    
+    width: 100%;
+    padding: 2.5%;
+    align-self: center;
+    background-color: rgb(232, 232, 233);
+}
+.firDetails #firSearchByFilter{
+    padding: 1%;
+}
+
+#firchart{
+  padding: 2%;
+  background-color: rgb(255, 255, 255);
+}
+
+mat-card-header{
+  padding: 1%;
+}
+
+
+
+.grid-container{
+  padding: 2.5%;
+}
+table thead tr th,
+table thead tr th,
+table tfoot tr th,
+table tfoot tr th{
+    background-color: #000;
+    color: #fff;
+    width: 1000px;
+}
+
+
+.example-form-field {
+    margin: 0 8px 16px 0;
+  }
+
+  mat-form-field{
+    padding-inline: 2%;
+  }
+
+  .chartButton{
+    margin: 1%;
+  }
+
+  .chartGrid{
+    height:1100;
+  }
+
+  smart-chart {
+    width: 100%;
+    max-width: 850px;
+  }
+
+ 
+
+  

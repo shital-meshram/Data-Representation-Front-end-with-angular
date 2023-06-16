@@ -1,0 +1,197 @@
+<div class="firDetails">
+
+  <div>
+    
+    <!--State Dropdown state-->
+    <mat-form-field appearance="fill">
+      <mat-label>Select State</mat-label>
+      <mat-select disableRipple [(ngModel)]="selectedState">
+        <mat-option *ngFor="let state of stateList" [disabled]="butDisabled" [value]="state.stateCode" >
+          {{state.stateName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!--State Dropdown end-->
+
+    <!--State Dropdown District-->
+    <mat-form-field appearance="fill">
+      <mat-label>Select District</mat-label>
+      <mat-select disableRipple [(ngModel)]="selectedDistrict">
+        <mat-option *ngFor="let district of districtList" [value]="district.districtCd" 
+          (click)="getPsList(selectedState,selectedDistrict)">{{district.districtName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!--State Dropdown District end-->
+
+    <!--State Dropdown Ps-->
+    <mat-form-field appearance="fill">
+      <mat-label>Select Police Station</mat-label>
+      <mat-select disableRipple [(ngModel)]="selectedPs">
+        <mat-option *ngFor="let ps of psList" [value]="ps.psCode" >{{ps.psName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!--State Dropdown Ps end-->
+
+
+
+
+    <div id="formDiv">
+      <form (ngSubmit)="SearchProcess(); getNoOfFirRegistered(); getFirChartBasedOnMajorHead()">
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker1" placeholder="Start Date" (dateChange)="updateStartDate($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker1" [(ngModel)]="startdate" ></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker2" placeholder="End Date" (dateChange)="updateEndDate($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker2" [(ngModel)]="enddate" ></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" color="primary" >Search</button>
+      </form>
+
+
+    </div>
+
+    
+      
+    <!-- </div> -->
+    <!--Dastboard end-->
+
+    
+  </div>
+
+
+
+  <!--HighCharts Starts-->
+  
+  <div>
+    <highcharts-chart
+      [Highcharts]="HighCharts"
+      [options]="chartOptions" 
+      style="width:100%; height:400px; display:block"
+    ></highcharts-chart>
+  </div>
+
+  <div class="row">
+    <div>
+      <highcharts-chart
+      [Highcharts]="HighCharts"
+      [options]="majorChartOptions"
+      style="width:100%; height:400px; display:block"
+    ></highcharts-chart>
+    </div>
+    
+  </div>
+
+  <br>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+    
+    <mat-card fxFlex="50">
+      <mat-card-header>
+        <mat-card-title>
+          FIR List
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="dashboard-card-content">
+        <div>
+          <div id="tableDiv">
+            <table id="firSearchByFilter" class="display" style="width:100%">
+              <thead>
+                <tr>
+                  <th>FIR Registration Number</th>
+                  <th>State</th>
+                  <th>District</th>
+                  <th>Police Station</th>
+                  <th>Assigned IO</th>
+                  <th>FIR Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let group of userdata">
+                  <td>{{group.firRegNum}}</td>
+                  <td>{{group.state}}</td>
+                  <td>{{group.district}}</td>
+                  <td>{{group.policeStation}}</td>
+                  <td>{{group.ioFullName}}</td>
+                  <td>{{group.firStatus}} </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>FIR Registration Number</th>
+                  <th>State</th>
+                  <th>District</th>
+                  <th>Police Station</th>
+                  <th>Assigned IO</th>
+                  <th>FIR Status</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+        </div>
+      </mat-card-content>
+        
+    </mat-card>
+
+
+    <mat-card fxFlex="50">
+      <mat-card-header>
+        <mat-card-title>
+          FIR List By Major Head 
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="dashboard-card-content">
+        <div>
+          <div id="tableDiv">
+            <table id="firSearchByMajorHead" class="display" style="width:100%">
+              <thead>
+                <tr>
+                  <th>FIR Registration Number</th>
+                  <th>State</th>
+                  <th>District</th>
+                  <th>Police Station</th>
+                  <th>Assigned IO</th>
+                  <th>FIR Status</th>
+                  <!-- <th>Action</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let fir of majorHeadFirData" (click)="openDialog(fir.firRegNum)">
+                  <td>{{fir.firRegNum}}</td>
+                  <td>{{fir.state}}</td>
+                  <td>{{fir.district}}</td>
+                  <td>{{fir.policeStation}}</td>
+                  <td>{{fir.ioFullName}}</td>
+                  <td>{{fir.firStatus}} </td>
+                  <!-- <td>
+                    <button mat-raised-button color="primary" (click)="getFirDetails($event);">Get Details</button>
+                  </td> -->
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>FIR Registration Number</th>
+                  <th>State</th>
+                  <th>District</th>
+                  <th>Police Station</th>
+                  <th>Assigned IO</th>
+                  <th>FIR Status</th>
+                  <!-- <th>Action</th> -->
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+        </div>
+      </mat-card-content>
+        
+    </mat-card>
+    
+    
+  </div>
+<!--HighCharts end-->
+</div>

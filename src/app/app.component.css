@@ -1,0 +1,40 @@
+mat-side-container{
+    
+    margin:0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+}
+
+mat-sidenav, mat-sidenav-content{
+padding: 16px;
+}
+
+mat-sidenav{
+background-color: rgb(240, 152, 45);
+width: 200px;
+}
+
+mat-sidenav-content{
+background-color:whitesmoke;
+} 
+
+.example-container {
+width: 400px;
+height: 200px;
+margin: 10px;
+border: 1px solid #555;
+}
+
+mat-toolbar{
+background-color: rgb(186, 172, 248);
+}
+
+html, body {
+height: 100%;
+box-sizing: border-box;
+margin: 0;
+}
+

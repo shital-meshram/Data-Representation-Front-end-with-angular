@@ -1,0 +1,30 @@
+.main-div mat-card{
+    padding: 5px;
+}
+
+.login-form{
+    padding: 7px;
+
+}
+
+
+.main-div{
+    padding: 10%;
+}
+
+.captcha-card{
+    width: 100%;
+    color: black;
+    height: max-content;
+    text-align: center;
+    font-size:larger;
+    font-style: oblique;
+    font-weight: bolder;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(198, 198, 199);
+}
+
+.captcha-field{
+    height: 40px;
+    font-size: large;
+}

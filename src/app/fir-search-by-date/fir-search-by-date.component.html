@@ -1,0 +1,57 @@
+<div id="mainDiv">
+    <!-- <div id="formDiv">
+        <form (ngSubmit)="SearchProcess()">
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker1" placeholder="Start Date"
+                    (dateChange)="updateStartDate($event)">
+                <mat-datepicker-toggle matSuffix [for]="picker1" [(ngModel)]="startdate"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker2" placeholder="End Date" (dateChange)="updateEndDate($event)">
+                <mat-datepicker-toggle matSuffix [for]="picker2" [(ngModel)]="enddate"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+
+            <button mat-raised-button type="submit" color="primary">Search</button>
+        </form>
+    </div> -->
+
+    <!--for table values display-->
+
+    <div id="tableDiv">
+        <table id="firSearchBydate" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>FIR Registration Number</th>
+                    <th>State</th>
+                    <th>District</th>
+                    <th>Police Station</th>
+                    <th>Assigned IO</th>
+                    <th>FIR Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let group of userdata">
+                    <td>{{group.firRegNum}}</td>
+                    <td>{{group.state}}</td>
+                    <td>{{group.district}}</td>
+                    <td>{{group.policeStation}}</td>
+                    <td>{{group.ioFullName}}</td>
+                    <td>{{group.firStatus}} </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>FIR Registration Number</th>
+                    <th>State</th>
+                    <th>District</th>
+                    <th>Police Station</th>
+                    <th>Assigned IO</th>
+                    <th>FIR Status</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div> 

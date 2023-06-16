@@ -1,0 +1,53 @@
+<!-- <mat-sidenav-container>
+    <mat-sidenav mode="push" [(opened)]="opened">
+      <mat-toolbar class="navbar">
+        <span>Navbar</span>
+      </mat-toolbar>
+          <mat-list>
+            <mat-selection-list #shoes [multiple]="false" >
+              <mat-list-option *ngFor="let menu of typesOfMenu" [value]="menu" (click)="getValue($event)">
+                {{menu}}
+              </mat-list-option>
+            </mat-selection-list>
+           </mat-list>
+
+           
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar >
+            <button mat-button (click)="opened=!opened">
+              <mat-icon>menu</mat-icon>
+            </button>
+            Open Menu
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>    -->
+
+<!-- <mat-sidenav-container>
+  <mat-sidenav>Start</mat-sidenav>
+  <mat-sidenav-content>Main</mat-sidenav-content>
+</mat-sidenav-container>
+
+  -->
+  <app-tabs (toggleSideNavForMe)="sideBarToggler($event)"></app-tabs>
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <!-- <mat-toolbar class="navbar">
+        <img src="../../assets/images/logo.png" class="logo" >
+      </mat-toolbar> -->
+      <mat-list>
+        <mat-selection-list #shoes [multiple]="false">
+          <mat-list-option *ngFor="let menu of typesOfMenu" [value]="menu" (click)="getValue($event)">
+            {{menu}}
+          </mat-list-option>
+          
+        </mat-selection-list>
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        
+      <!-- <app-dashboard></app-dashboard> -->
+      <router-outlet></router-outlet> 
+    </mat-drawer-content>
+  </mat-drawer-container>

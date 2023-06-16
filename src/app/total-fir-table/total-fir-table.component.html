@@ -1,0 +1,49 @@
+<div >
+    <!-- <mat-card fxFlex="50">
+        <mat-card-header>
+          <mat-card-title>
+            FIR List
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content"> -->
+          <div >
+            <div id="tableDiv">
+              <table id="firSearchByFilter2" class="display" style="width:100%">
+                <thead>
+                  <tr>
+                    <th>FIR Registration Number</th>
+                    <th>State</th>
+                    <th>District</th>
+                    <th>Police Station</th>
+                    <th>Assigned IO</th>
+                    <th>FIR Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let group of userdata">
+                    <td>{{group.firRegNum}}</td>
+                    <td>{{group.state}}</td>
+                    <td>{{group.district}}</td>
+                    <td>{{group.policeStation}}</td>
+                    <td>{{group.ioFullName}}</td>
+                    <td>{{group.firStatus}} </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>FIR Registration Number</th>
+                    <th>State</th>
+                    <th>District</th>
+                    <th>Police Station</th>
+                    <th>Assigned IO</th>
+                    <th>FIR Status</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+  
+          </div>
+        <!-- </mat-card-content>
+          
+      </mat-card> -->
+</div>

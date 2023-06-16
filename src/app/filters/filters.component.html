@@ -1,0 +1,60 @@
+<div>
+    
+    <!--State Dropdown state-->
+    <mat-form-field appearance="fill">
+      <mat-label>Select State</mat-label>
+      <mat-select disableRipple [(ngModel)]="selectedState">
+        <mat-option *ngFor="let state of stateList" [disabled]="butDisabled" [value]="state.stateCode" >
+          {{state.stateName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!--State Dropdown end-->
+
+    <!--State Dropdown District-->
+    <mat-form-field appearance="fill">
+      <mat-label>Select District</mat-label>
+      <mat-select disableRipple [(ngModel)]="selectedDistrict">
+        <mat-option *ngFor="let district of districtList" [value]="district.districtCd" 
+          (click)="getPsList(selectedState,selectedDistrict)">{{district.districtName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!--State Dropdown District end-->
+
+    <!--State Dropdown Ps-->
+    <mat-form-field appearance="fill">
+      <mat-label>Select Police Station</mat-label>
+      <mat-select disableRipple [(ngModel)]="selectedPs">
+        <mat-option *ngFor="let ps of psList" [value]="ps.psCode" >{{ps.psName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!--State Dropdown Ps end-->
+
+
+
+
+   
+      <!-- <form > -->
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker1" placeholder="Start Date" (dateChange)="updateStartDate($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker1" [(ngModel)]="startdate" ></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker2" placeholder="End Date" (dateChange)="updateEndDate($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker2" [(ngModel)]="enddate" ></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" color="primary" (click)="emitEvent(); clickEvent()">Search</button>
+      <!-- </form> -->
+
+
+    
+      
+    <!-- </div> -->
+    <!--Dastboard end-->
+
+    
+  </div>

@@ -1,0 +1,41 @@
+<div>
+        <div>
+          <div id="tableDiv">
+            
+            <table id="firSearchByMajorHead2" class="display nowrap" style="width:100%">
+              <thead>
+                <tr>
+                  <th>FIR Registration Number</th>
+                  <th>State</th>
+                  <th>District</th>
+                  <th>Police Station</th>
+                  <th>Assigned IO</th>
+                  <th>FIR Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let fir of majorHeadFirData" (click)="openDialog(fir.firRegNum)">
+                  <td>{{fir.firRegNum}}</td>
+                  <td>{{fir.state}}</td>
+                  <td>{{fir.district}}</td>
+                  <td>{{fir.policeStation}}</td>
+                  <td>{{fir.ioFullName}}</td>
+                  <td>{{fir.firStatus}} </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>FIR Registration Number</th>
+                  <th>State</th>
+                  <th>District</th>
+                  <th>Police Station</th>
+                  <th>Assigned IO</th>
+                  <th>FIR Status</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+        </div>
+    
+  </div>

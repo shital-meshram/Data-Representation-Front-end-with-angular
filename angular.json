@@ -23,9 +23,27 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/datatables.net-dt/css/jquery.dataTables.css",
+              "src/assets/cdn_datatables/buttons.bootstrap5.min.css",
+              "src/assets/cdn_datatables/dataTables.bootstrap5.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/datatables.net/js/jquery.dataTables.js",
+              "src/assets/cdn_datatables/buttons.bootstrap5.min.js",
+              "src/assets/cdn_datatables/buttons.colVis.min.js",
+              "src/assets/cdn_datatables/buttons.html5.min.js",
+              "src/assets/cdn_datatables/buttons.print.min.js",
+              "src/assets/cdn_datatables/dataTables.bootstrap5.min.js",
+              "src/assets/cdn_datatables/dataTables.buttons.min.js",
+              "src/assets/cdn_datatables/jquery.dataTables.min.js",
+              "src/assets/cdn_datatables/jszip.min.js",
+              "src/assets/cdn_datatables/pdfmake.min.js",
+              "src/assets/cdn_datatables/vfs_fonts.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -97,5 +115,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "83670f7e-1b62-410c-9aff-aa63e4a64b02"
   }
 }

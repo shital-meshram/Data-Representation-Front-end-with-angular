@@ -1,0 +1,35 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="30">
+      <mat-toolbar color="primary">Login Page</mat-toolbar>
+      <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup"
+        (ngSubmit)="loginProcess()">
+        <mat-form-field>
+          <input matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+  
+        <label>Captcha</label>
+        <mat-card class="captcha-card" >
+  
+            <input matInput type="text" class="captcha-field" readonly id="capt" value="{{final}}">
+        </mat-card>
+  
+        <mat-form-field>
+          <input matInput type="text" placeholder="Enter Captcha" id="textinput">
+        </mat-form-field>
+  
+         
+  
+  
+  
+        <button mat-raised-button type="submit" color="primary">Login</button>
+      </form>
+    </mat-card>
+  </div>

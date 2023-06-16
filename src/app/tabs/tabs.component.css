@@ -1,0 +1,15 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  ul li{
+    list-style: none;
+  } 
+
+  .logo{
+    width: 100px;
+    height: 60px;
+    margin: 5px;
+}
+
+ 

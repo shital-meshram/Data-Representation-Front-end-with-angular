@@ -1,0 +1,52 @@
+<div class="grid-container" id="maindivdash">
+  <div class="row">
+    <mat-card>
+      <app-filters (state)="getStateFilter($event)" (dist)="getDistrictFilter($event)"
+      (ps)="getPsFilter($event)" (startDt)="getStartDateFilter($event)" (endDt)="getEndDateFiler($event)" ></app-filters>
+    </mat-card>
+  </div>
+  <div class="row">
+    <mat-card fxFlex="25">
+      <app-dashboard-chips>
+  
+      </app-dashboard-chips>
+    </mat-card>
+    <mat-card fxFlex="25"> 
+      <app-fir-chart #firChartComponent [stateCd]="selectedState" [distCd]="selectedDistrict" [psCd]="selectedPs" [startDt]="startdate" [endDt]="enddate"></app-fir-chart>
+    </mat-card>
+    <mat-card fxFlex="50">
+      <mat-card-header>
+        <mat-card-title>
+          Total FIR Registered
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="dashboard-card-content">
+      <app-total-fir-table ></app-total-fir-table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="row">
+    <mat-card fxFlex="50">
+      <mat-card-header>
+        <mat-card-title>
+          Major Head vise FIRs
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="dashboard-card-content">
+        <app-major-head-chart (majorHeadName)="setSelectedMajorHeadName($event)"></app-major-head-chart>
+      </mat-card-content>
+    </mat-card>
+    <mat-card fxFlex="50">
+      <mat-card-header>
+        <mat-card-title > FIR Registered for {{selectedMajorHeadName}} Cases
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="dashboard-card-content">
+        <app-major-head-fir-table ></app-major-head-fir-table>
+      </mat-card-content>
+      
+    </mat-card>
+  </div>
+
+</div>
